@@ -30,25 +30,32 @@ public class MainOrdenado {
         ejercito.enlistarSoldado(soldado9);
         ejercito.enlistarSoldado(soldado10);
 
-        //Mostramos el numero de soldados
-        System.out.println("El numero de soldados es: " + ejercito.getNumeroSoldados());
-
-        //Mostramos si el ejercito esta vacio
-        System.out.println("El ejercito esta vacio: " + ejercito.noHaySoldados());
-
-        //Mostramos si el soldado esta en el ejercito
-        System.out.println("El soldado esta en el ejercito: " + ejercito.soldadoEstaEnEjercito(soldado));
 
         //Mostramos los soldados
-        System.out.println("Los soldados son: " + ejercito.sacarSoldados());
+        ejercito.mostrarSoldados();
 
-        //Desmatriculamos al soldado
-        ejercito.desmatricularSoldado(soldado);
+        System.out.println("------------------------------------------------------------------------------------------");
 
+        //Mostramos la cantidad de soldados
+        System.out.println("La cantidad de soldados es: " + ejercito.cantidadSoldados());
+
+        System.out.println("------------------------------------------------------------------------------------------");
+
+        //Mostramos los soldados guardados en el arraylist
+        System.out.println(ejercito.guardarSoldados());
+
+        System.out.println("------------------------------------------------------------------------------------------");
+
+        //Eliminamos un soldado
+        ejercito.eliminarSoldado(10);
+        System.out.println("-----------------------------Soldado Eliminado-------------------");
+        System.out.println("------------------------------------------------------------------------------------------");
         //Mostramos los soldados
-        System.out.println("Los soldados son: " + ejercito.sacarSoldados());
+        ejercito.mostrarSoldados();
+        System.out.println("La cantidad de soldados es: " + ejercito.cantidadSoldados());
 
-        //Mostramos el numero de soldados
-        System.out.println("El numero de soldados es: " + ejercito.getNumeroSoldados());
+
+
+
     }
 }

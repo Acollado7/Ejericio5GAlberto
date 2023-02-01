@@ -1,59 +1,52 @@
 package paquetec;
 
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;public class EjercitoOrdenado {
-    //Crea una clase EjercitoOrdenado donde haya la misma funcionalidad pero hay que
-    // tener en cuenta que en este caso no hay duplicados y los soldados están ordenados según su nif.
+import java.util.*;
 
-    private SortedSet<Soldado> soldados;
+public class EjercitoOrdenado {
 
-    /*En una estructura map, asocia a cada objeto de tipo Ejercito un
-    identificador único. Se deben poder guardar Ejércitos con sus identificadores
-    asociados, obtener un Ejercito según su nombre y obtener todos los Ejércitos
-    contenidos en la estructura map.
-     */
-    public EjercitoOrdenado(int numeroSoldados) {
-        this.soldados = new TreeSet<>();
-    }
+    private Map<Integer, Soldado> ejercito;
 
-    public Set<Soldado> getSoldados() {
-        return soldados;
-    }
-
-    public void setSoldados(SortedSet<Soldado> soldados) {
-        this.soldados = soldados;
-    }
-    public int getNumeroSoldados() {
-        return soldados.size();
+    public EjercitoOrdenado(int capacidad) {
+        ejercito = new TreeMap<Integer, Soldado>();
     }
 
     public void enlistarSoldado(Soldado soldado) {
-        soldados.add(soldado);
+        ejercito.put(soldado.getNif(), soldado);
     }
 
-    public boolean noHaySoldados() {
-        return soldados.isEmpty();
+    public Soldado obtenerSoldado(int nif) {
+        return ejercito.get(nif);
     }
 
-    public boolean soldadoEstaEnEjercito(Soldado soldado) {
-        if (soldados.contains(soldado)) {
-            return true;
+    public Collection<Soldado> obtenerSoldados() {
+        return ejercito.values();
+    }
 
-        } else {
-            return false;
+    public void mostrarSoldados() {
+        for (Soldado soldado : ejercito.values()) {
+            System.out.println(soldado);
         }
-
     }
 
-    public Set<Soldado> sacarSoldados() {
+    //metodo que nos muestre la cantidad de soldados que hay en el ejercito
+    public int cantidadSoldados(){
+        return ejercito.size();
+    }
+
+    //metodo para guardar los soldados
+
+    public ArrayList<Soldado> guardarSoldados(){
+        ArrayList<Soldado> soldados = new ArrayList<Soldado>();
+        for (Soldado soldado : ejercito.values()) {
+            soldados.add(soldado);
+        }
         return soldados;
     }
 
-    public void desmatricularSoldado(Soldado soldado) {
-        soldados.remove(soldado);
+    //metodo eliminar soldado
+    public void eliminarSoldado(int nif){
+        ejercito.remove(nif);
     }
-
 
 
 
