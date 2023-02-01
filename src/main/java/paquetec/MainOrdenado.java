@@ -48,7 +48,7 @@ public class MainOrdenado {
 
         //Eliminamos un soldado
         ejercito.eliminarSoldado(10);
-        System.out.println("-----------------------------Soldado Eliminado-------------------");
+        System.out.println("-----------------------------Soldado Eliminado-------------------------");
         System.out.println("------------------------------------------------------------------------------------------");
         //Mostramos los soldados
         ejercito.mostrarSoldados();
