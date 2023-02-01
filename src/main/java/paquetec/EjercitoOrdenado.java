@@ -46,4 +46,9 @@ public class EjercitoOrdenado {
     public Soldado buscarSoldado(int identificador){
         return ejercito.get(identificador);
     }
+
+    //Metodo que dependiendo de la key te devuelva el soldado
+    public Soldado buscarSoldadoPorKey(int key){
+        return ejercito.get(key);
+    }
 }
